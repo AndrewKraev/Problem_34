@@ -16,13 +16,13 @@ func Sumfactorial(m int) int {
 	var temp int
 	var sum int = 0
 
-	if m < 10 {
-		sum = sum + Factorial(m)
-	}
 	for m >= 10 {
 		temp = m % 10
 		sum = sum + Factorial(temp)
 		m = m / 10
+	}
+	if m < 10 {
+		sum = sum + Factorial(m)
 	}
 	return sum
 }
@@ -35,7 +35,7 @@ func main() {
 	}
 	for j := 1; j < int(math.Pow10(out_n)); j++ {
 		if j == Sumfactorial(j) {
-			fmt.Println(j, " ", Sumfactorial(j))
+			fmt.Println(j, "\t", Sumfactorial(j))
 		}
 
 	}
